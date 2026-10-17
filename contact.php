@@ -47,7 +47,8 @@ if (
     respond(422, false, 'Please check your details and message, then try again.');
 }
 
-$recipient = 'work.ritvoo@gmail.com';
+$recipients = ['hello@ritvoo.in', 'work.ritvoo@gmail.com'];
+$recipient = implode(', ', $recipients);
 $safeName = str_replace(["\r", "\n"], ' ', $name);
 $subject = 'Website enquiry from ' . $safeName;
 $encodedSubject = '=?UTF-8?B?' . base64_encode($subject) . '?=';
